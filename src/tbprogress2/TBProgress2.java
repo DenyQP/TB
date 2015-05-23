@@ -16,6 +16,7 @@ public class TBProgress2 {
         Sistem analisis = new Sistem();
         IO in = new IO();
         in.inputIdentitasKelas();
+        
 //        in.InputKondisiRuang();
 //        analisis.persentaseKondisiRuang();
 //        analisis.CheckKondisiSarana();

@@ -113,49 +113,49 @@ public class IO extends Proses implements View{
     }
     @Override
     public void inputKondisiSarana(){
-        System.out.println("Masukkan Jumlah Stop Kontak : ");
-        kls.setJumlahStopKontak(in.nextInt());
-        System.out.println("Masukkan Kondisi Stop Kontak : ");
-        kls.setKondisiStopKontak(in.next());
-        System.out.println("Masukkan Posisi Stop Kontak : ");
-        kls.setPosisiStopKontak(in.next());
-        System.out.println("Masukkan Jumlah Kabel LCD : ");
-        kls.setJumlahKabelLCD(in.nextInt());
-        System.out.println("Masukkan Kondisi Kabel LCD : ");
-        kls.setKondisiKabelLCD(in.next());
-        System.out.println("Masukkan Posisi Kabel LCD : ");
-        kls.setPosisiKabelLCD(in.next());
-        System.out.println("Masukkan Jumlah Lampu : ");
-        kls.setJumlahLampu(in.nextInt());
-        System.out.println("Masukkan Kondisi Lampu : ");
-        kls.setKondisiLampu(in.next());
-        System.out.println("Masukkan Posisi Lampu : ");
-        kls.setPosisiLampu(in.next());
-        System.out.println("Masukkan Jumlah Kipas Angin : ");
-        kls.setJumlahKipasAngin(in.nextInt());
-        System.out.println("Masukkan Kondisi Kipas Angin : ");
-        kls.setKondisiKipasAngin(in.next());
-        System.out.println("Masukkan Posisi Kipas Angin : ");
-        kls.setPosisiKipasAngin(in.next());
-        System.out.println("Masukkan Jumlah AC : ");
-        kls.setJumlahAC(in.nextInt());
-        System.out.println("Masukkan Kondisi AC : ");
-        kls.setKondisiAC(in.next());
-        System.out.println("Masukkan Posisi AC : ");
-        kls.setPosisiAC(in.next());
-        System.out.println("Masukkan SSID : ");
-        kls.setSSID(in.next());
-        System.out.println("Masukkan Bandwidth : ");
-        kls.setBandwidth(in.next());
-        System.out.println("Masukkan Jumlah CCTV : ");
-        kls.setJumlahCCTV(in.nextInt());
-        System.out.println("Masukkan Kondisi CCTV : ");
-        kls.setKondisiCCTV(in.next());
-        System.out.println("Masukkan Posisi CCTV : ");
-        kls.setPosisiCCTV(in.next());
-        rk = new RuangKelas(kls.getJumlahStopKontak(),kls.getKondisiStopKontak(),kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getPosisiLampu(),kls.getJumlahKipasAngin(),kls.getKondisiKipasAngin(),kls.getPosisiKipasAngin(),kls.getJumlahAC(),kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),kls.getKondisiCCTV(),kls.getPosisiCCTV());
+//        System.out.println("Masukkan Jumlah Stop Kontak : ");
+//        kls.setJumlahStopKontak(in.nextInt());
+//        System.out.println("Masukkan Kondisi Stop Kontak : ");
+//        kls.setKondisiStopKontak(in.next());
+//        System.out.println("Masukkan Posisi Stop Kontak : ");
+//        kls.setPosisiStopKontak(in.next());
+//        System.out.println("Masukkan Jumlah Kabel LCD : ");
+//        kls.setJumlahKabelLCD(in.nextInt());
+//        System.out.println("Masukkan Kondisi Kabel LCD : ");
+//        kls.setKondisiKabelLCD(in.next());
+//        System.out.println("Masukkan Posisi Kabel LCD : ");
+//        kls.setPosisiKabelLCD(in.next());
+//        System.out.println("Masukkan Jumlah Lampu : ");
+//        kls.setJumlahLampu(in.nextInt());
+//        System.out.println("Masukkan Kondisi Lampu : ");
+//        kls.setKondisiLampu(in.next());
+//        System.out.println("Masukkan Posisi Lampu : ");
+//        kls.setPosisiLampu(in.next());
+//        System.out.println("Masukkan Jumlah Kipas Angin : ");
+//        kls.setJumlahKipasAngin(in.nextInt());
+//        System.out.println("Masukkan Kondisi Kipas Angin : ");
+//        kls.setKondisiKipasAngin(in.next());
+//        System.out.println("Masukkan Posisi Kipas Angin : ");
+//        kls.setPosisiKipasAngin(in.next());
+//        System.out.println("Masukkan Jumlah AC : ");
+//        kls.setJumlahAC(in.nextInt());
+//        System.out.println("Masukkan Kondisi AC : ");
+//        kls.setKondisiAC(in.next());
+//        System.out.println("Masukkan Posisi AC : ");
+//        kls.setPosisiAC(in.next());
+//        System.out.println("Masukkan SSID : ");
+//        kls.setSSID(in.next());
+//        System.out.println("Masukkan Bandwidth : ");
+//        kls.setBandwidth(in.next());
+//        System.out.println("Masukkan Jumlah CCTV : ");
+//        kls.setJumlahCCTV(in.nextInt());
+//        System.out.println("Masukkan Kondisi CCTV : ");
+//        kls.setKondisiCCTV(in.next());
+//        System.out.println("Masukkan Posisi CCTV : ");
+//        kls.setPosisiCCTV(in.next());
+//        rk = new RuangKelas(kls.getJumlahStopKontak(),kls.getKondisiStopKontak(),kls.getPosisiStopKontak(),kls.getJumlahKabelLCD(),kls.getKondisiKabelLCD(),kls.getPosisiKabelLCD(),kls.getJumlahLampu(),kls.getKondisiLampu(),kls.getPosisiLampu(),kls.getJumlahKipasAngin(),kls.getKondisiKipasAngin(),kls.getPosisiKipasAngin(),kls.getJumlahAC(),kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),kls.getKondisiCCTV(),kls.getPosisiCCTV());
     }
-    
+//    
     @Override
     public void inputKondisiLingkungan(){
         System.out.println("Masukkan Kondisi Lantai : ");
@@ -173,15 +173,16 @@ public class IO extends Proses implements View{
     
     @Override
     public void inputKondisiKebersihan(){
-        System.out.println("Masukkan Sirkulasi Udara: ");
-        kls.setSirkulasiUdara(in.next());
-        System.out.println("Masukkan Nilai Pencahayaan : ");
-        kls.setNilaiPencahayaan(in.nextInt());
-        System.out.println("Masukkan Kelembaban (%) : ");
-        kls.setKelembaban(in.nextInt());
-        System.out.println("Masukkan Suhu (celcius) : ");
-        kls.setSuhu(in.nextInt());
-        rk = new RuangKelas(kls.getSirkulasiUdara(),kls.getNilaiPencahayaan(),kls.getKelembaban(),kls.getSuhu());   
+     
+//        System.out.println("Masukkan Sirkulasi Udara: ");
+//        kls.setSirkulasiUdara(in.next());
+//        System.out.println("Masukkan Nilai Pencahayaan : ");
+//        kls.setNilaiPencahayaan(in.nextInt());
+//        System.out.println("Masukkan Kelembaban (%) : ");
+//        kls.setKelembaban(in.nextInt());
+//        System.out.println("Masukkan Suhu (celcius) : ");
+//        kls.setSuhu(in.nextInt());
+//        rk = new RuangKelas(kls.getSirkulasiUdara(),kls.getNilaiPencahayaan(),kls.getKelembaban(),kls.getSuhu());   
     }
     @Override
       public void inputKondisiKenyamanan(){
@@ -202,6 +203,8 @@ public class IO extends Proses implements View{
     @Override
     public void inputKondisiKeamanan(){
         new KondisiKeamanan().setVisible(true);
+        
+       
 //        System.out.println("Apakah Bangunan Masih Kokoh ? : ");
 //        kls.setKekokohan(in.next());
 //        System.out.println("Apakah Ada Kunci Pintu dan Jendela ? : ");
