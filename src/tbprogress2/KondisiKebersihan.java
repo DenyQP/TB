@@ -148,7 +148,7 @@ public class KondisiKebersihan extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("KONDISI LINGKUNGAN");
+        jLabel1.setText("KONDISI KEBERSIHAN");
 
         spencahayaan.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {

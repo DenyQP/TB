@@ -150,6 +150,12 @@ public class KondisiRuang extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Jumlah Kursi     :");
 
+        kursi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kursiActionPerformed(evt);
+            }
+        });
+
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Lebar Ruang     :");
 
@@ -347,6 +353,10 @@ public class KondisiRuang extends javax.swing.JFrame {
         jendela.setText(null);
         kursi.setText(null);
     }//GEN-LAST:event_DelActionPerformed
+
+    private void kursiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kursiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kursiActionPerformed
 
     /**
      * @param args the command line arguments

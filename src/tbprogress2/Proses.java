@@ -21,7 +21,7 @@ public abstract class Proses {
 //    void Persentase(double point, double total){
 //        double persen;
 //        persen = point/total;
-//    }
+//    }as
     
     
 }

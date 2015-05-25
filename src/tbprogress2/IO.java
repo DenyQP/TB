@@ -158,17 +158,17 @@ public class IO extends Proses implements View{
 //    
     @Override
     public void inputKondisiLingkungan(){
-        System.out.println("Masukkan Kondisi Lantai : ");
-        kls.setKondisiLantai(in.next());
-        System.out.println("Masukkan Kondisi Dinding : ");
-        kls.setKondisiDinding(in.next());
-        System.out.println("Masukkan Kondisi Atap : ");
-        kls.setKondisiAtap(in.next());
-        System.out.println("Masukkan Kondisi Pintu : ");
-        kls.setKondisiPintu(in.next());
-        System.out.println("Masukkan Kondisi Jendela : ");
-        kls.setKondisiJendela(in.next());
-        rk = new RuangKelas(kls.getKondisiLantai(),kls.getKondisiDinding(),kls.getKondisiAtap(),kls.getKondisiPintu(),kls.getKondisiJendela());
+//        System.out.println("Masukkan Kondisi Lantai : ");
+//        kls.setKondisiLantai(in.next());
+//        System.out.println("Masukkan Kondisi Dinding : ");
+//        kls.setKondisiDinding(in.next());
+//        System.out.println("Masukkan Kondisi Atap : ");
+//        kls.setKondisiAtap(in.next());
+//        System.out.println("Masukkan Kondisi Pintu : ");
+//        kls.setKondisiPintu(in.next());
+//        System.out.println("Masukkan Kondisi Jendela : ");
+//        kls.setKondisiJendela(in.next());
+//        rk = new RuangKelas(kls.getKondisiLantai(),kls.getKondisiDinding(),kls.getKondisiAtap(),kls.getKondisiPintu(),kls.getKondisiJendela());
     }
     
     @Override
