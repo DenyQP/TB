@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.util.Scanner;
 /**ASLDKLSAKDL
  *
- * @author Deny Qutara Putra (175)
+ * @author ms Deny Qutara Putra (175)
  */
 public class IO extends Proses implements View{
     
