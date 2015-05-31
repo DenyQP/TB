@@ -99,7 +99,7 @@ DatabaseWork(){
                 
                 Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
-                        "insert into kondisi"
+                        "insert into keamanan"
                         + "(kokoh, kunci, bahaya) values ('" +  Kokoh+ "','" + Adakunci + "','" + Aman + "')");
 
                 JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
@@ -108,6 +108,73 @@ DatabaseWork(){
             JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
         }
     }
+    
+    
+      void Save(String LB,String DB,String AB,String PB,String JB) {
+       
+        try {
+            if (LB.equals("") || DB.equals("") || AB.equals("") || PB.equals("") || JB.equals("") ) {
+                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+                
+            } else {
+                
+                Statement st = con.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "insert into kebersihan"
+                        + "(lantai, dinding, atap, pintu, jendela) values ('" +  LB+ "','" + DB + "','" + AB + "','" + PB + "','"+ JB + "')");
+
+                JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+        }
+    }
+    
+      
+       void Save(JTextField PBising,JTextField PBau,JTextField PAus,String BBanyak,String RBanyak) {
+           try {
+            if (PBising.equals("") || PBau.equals("") || PAus.equals("") || BBanyak.equals("") || RBanyak.equals("") ) {
+                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+                
+            } else {
+                
+                Statement st = con.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "insert into kenyamanan"
+                        + "(bising, bau, bocor, rusak, aus) values ('" + PBising + "','" + PBau + "','" + BBanyak + "','" + RBanyak  + "','"+ PAus + "')");
+
+                JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+        }
+       
+       }
+      
+       
+       
+         void Save(JTextField PRC,JTextField PRL,JTextField PSR,String SUL) {
+           try {
+            if (PRC.equals("") || PRL.equals("") || PSR.equals("") || SUL.equals("") ) {
+                JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
+                
+            } else {
+                
+                Statement st = con.config.getConnection().createStatement();
+                st.executeUpdate(
+                        "insert into lingkungan"
+                        + "(udara, cahaya, lembab, suhu) values ('" + SUL + "','" + PRC + "','" + PRL + "','" + PSR +  "')");
+
+                JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+        }
+       
+       }
+         
+         
+         
      void kondisiHapus(String Tabel,String Arrow,String id) {
         //g = id.getText();
         try {
