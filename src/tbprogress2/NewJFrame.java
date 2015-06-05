@@ -8,7 +8,7 @@ package tbprogress2;
 
 /**
  *
- * @author toshiba
+ * @author test rere
  */
 public class NewJFrame extends javax.swing.JFrame {
 
