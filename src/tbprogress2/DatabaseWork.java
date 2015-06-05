@@ -153,9 +153,9 @@ DatabaseWork(){
       
        
        
-         void Save(JTextField PRC,JTextField PRL,JTextField PSR,String SUL) {
+         void Save(String SUL,int PRC,int PRL,int PSR) {
            try {
-            if (PRC.equals("") || PRL.equals("") || PSR.equals("") || SUL.equals("") ) {
+               if (PRC==0 || PRL==0 || PSR==0 || SUL.equals("") ) {
                 JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
                 
             } else {
