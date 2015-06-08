@@ -144,8 +144,29 @@ public class KondisiKenyamanan extends javax.swing.JFrame {
             frameSize.width = screenSize.width;
         }
         this.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
-        
+    setDefaultCloseOperation(HIDE_ON_CLOSE);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+        public void componentHidden(java.awt.event.ComponentEvent evt) {
+            formComponentHidden(evt);
+        }
+    });
     }
+     private static void formComponentHidden(java.awt.event.ComponentEvent evt) {
+    somefunction();
+    }
+ public static void somefunction()
+ {
+    int selectedOption = javax.swing.JOptionPane.showConfirmDialog(null,"Apakah anda akan menutup system?", "Tutup Aplikasi", javax.swing.JOptionPane.YES_NO_OPTION);
+        if (selectedOption == javax.swing.JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+        else{
+           new DataAwal().setVisible(true);
+        }
+  
+  //System.out.println("hii!! i am hidden!!");
+
+  }
     public void nyeret1(){
                 PersenBising.setEditable(false);	
 	        PersenBising.setText(String.valueOf(Sbising.getValue()));	

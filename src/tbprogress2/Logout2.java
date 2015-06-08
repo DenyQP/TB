@@ -41,9 +41,12 @@ public static void main(String aa[])
  public static void somefunction()
  {
      int selectedOption = javax.swing.JOptionPane.showConfirmDialog(null,"Apakah anda akan menutup system?", "Tutup Aplikasi", javax.swing.JOptionPane.YES_NO_OPTION);
- if (selectedOption == javax.swing.JOptionPane.YES_OPTION) {
- 
- }
+  if (selectedOption == javax.swing.JOptionPane.YES_OPTION) {
+            //dispose
+  }
+  if (selectedOption == javax.swing.JOptionPane.NO_OPTION) {
+            //stay
+  }
   //System.out.println("hii!! i am hidden!!");
 
   }

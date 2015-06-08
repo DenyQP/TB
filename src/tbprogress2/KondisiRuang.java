@@ -114,8 +114,29 @@ public class KondisiRuang extends javax.swing.JFrame {
                 kursi.setText("");
 	        nyeret1();
                 nyeret2();
-                
+    setDefaultCloseOperation(HIDE_ON_CLOSE);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+        public void componentHidden(java.awt.event.ComponentEvent evt) {
+            formComponentHidden(evt);
+        }
+    });
     }
+     private static void formComponentHidden(java.awt.event.ComponentEvent evt) {
+    somefunction();
+    }
+ public static void somefunction()
+ {
+    int selectedOption = javax.swing.JOptionPane.showConfirmDialog(null,"Apakah anda akan menutup system?", "Tutup Aplikasi", javax.swing.JOptionPane.YES_NO_OPTION);
+        if (selectedOption == javax.swing.JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+        else{
+           new DataAwal().setVisible(true);
+        }
+  
+  //System.out.println("hii!! i am hidden!!");
+
+  }
     public void nyeret1(){
             txtValue.setEditable(false);	
 	        txtValue.setText(null);	
