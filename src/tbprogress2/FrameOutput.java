@@ -46,7 +46,7 @@ public class FrameOutput extends javax.swing.JFrame {
 
     private void tableModel(JTable jTabel1,String KR) {
         try {
-            Object[] field = { "Luas", "Bentuk", "Rasio", "Analisis Rasio","Jumlah Kursi","Jumlah Jendela"};
+            Object[] field = { "Luas", "Bentuk", "Rasio", "Analisis Rasio","Jumlah Kursi","Jumlah Jendel","Persentase"};
             DefaultTabelku = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
@@ -67,8 +67,9 @@ public class FrameOutput extends javax.swing.JFrame {
                 String kolom5 = set.getString("arasio");
                 String kolom6 = set.getString("apintu");
                 String kolom7 = set.getString("ajendela");
-                String kolom8 = set.getString("id");
-                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8};
+                String kolom8 = set.getString("persenkondisi");
+                String kolom9 = set.getString("id");
+                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9};
                 DefaultTabelku.addRow(data);
             }
 
@@ -85,6 +86,8 @@ public class FrameOutput extends javax.swing.JFrame {
             kolom = jTabel1.getColumnModel().getColumn(4);
             kolom.setPreferredWidth(240);
             kolom = jTabel1.getColumnModel().getColumn(5);
+            kolom.setPreferredWidth(240);
+            kolom = jTabel1.getColumnModel().getColumn(6);
             kolom.setPreferredWidth(240);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
@@ -138,7 +141,7 @@ public class FrameOutput extends javax.swing.JFrame {
     }
     private void tableModel2(JTable jTabel1,String KR) {
         try {
-            Object[] field = { "Jumlah Stop Kontak", "Kondisi Stop Kontak", "Posisi Stopkontak", "Jumlah Kabel LCD", "Kondisi Kabel LCD", "Posisi Kabel LCD","Jumlah Lampu ", "Kondisi Lampu", "Posisi Lampu","ID"};
+            Object[] field = { "Jumlah Stop Kontak", "Kondisi Stop Kontak", "Posisi Stopkontak", "Jumlah Kabel LCD", "Kondisi Kabel LCD", "Posisi Kabel LCD","Jumlah Lampu ", "Kondisi Lampu", "Posisi Lampu","ID","Presentase"};
             DefaultTabelku = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
@@ -163,7 +166,8 @@ public class FrameOutput extends javax.swing.JFrame {
                 String kolom9 = set.getString("aklampu");
                 String kolom10 = set.getString("aplampu");
                 String kolom11 = set.getString("id");
-                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11};
+                String kolom12 = set.getString("persensarana");
+                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
                 DefaultTabelku.addRow(data);
             }
 
@@ -189,17 +193,20 @@ public class FrameOutput extends javax.swing.JFrame {
             kolom.setPreferredWidth(220);
             
             kolom = jTabel1.getColumnModel().getColumn(9);
-            kolom.setPreferredWidth(0);
+             kolom.setPreferredWidth(0);
             kolom.setMinWidth(0);
             kolom.setMaxWidth(0);
             kolom.setWidth(0);
+            kolom = jTabel1.getColumnModel().getColumn(10);
+            kolom.setPreferredWidth(220);
+           
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
         }
     }
     private void tableModel3(JTable jTabel1,String KR) {
         try {
-            Object[] field = { "Jumlah Kipas Angin", "Kondisi Kipas Angin", "Posisi Kipas Angin", "Jumlah AC", "Kondisi AC", "Posisi AC","SSID","Bandwidth","Jumlah CCTV ", "Kondisi CCTV", "Posisi CCTV","ID"};
+            Object[] field = { "Jumlah Kipas Angin", "Kondisi Kipas Angin", "Posisi Kipas Angin", "Jumlah AC", "Kondisi AC", "Posisi AC","SSID","Bandwidth","Jumlah CCTV ", "Kondisi CCTV", "Posisi CCTV","ID","Presentase"};
             DefaultTabelku = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
@@ -226,7 +233,9 @@ public class FrameOutput extends javax.swing.JFrame {
                 String kolom11 = set.getString("akcctv");
                 String kolom12 = set.getString("apcctv");
                 String kolom13 = set.getString("id");
-                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12,kolom13};
+                String kolom14 = set.getString("persensarana2");
+
+                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12,kolom13,kolom14};
                 DefaultTabelku.addRow(data);
             }
 
@@ -254,6 +263,8 @@ public class FrameOutput extends javax.swing.JFrame {
             kolom.setPreferredWidth(240);
             kolom = jTabel1.getColumnModel().getColumn(10);
             kolom.setPreferredWidth(220);
+            kolom = jTabel1.getColumnModel().getColumn(12);
+            kolom.setPreferredWidth(220);
             kolom = jTabel1.getColumnModel().getColumn(11);
             kolom.setPreferredWidth(0);
             kolom.setMinWidth(0);
@@ -265,7 +276,7 @@ public class FrameOutput extends javax.swing.JFrame {
     }
     private void tableModel8(JTable jTabel1,String KR) {
         try {
-            Object[] field = { "Kekokohan", "Kunci Pintu Jendela", "Kebahayaan"};
+            Object[] field = { "Kekokohan", "Kunci Pintu Jendela", "Kebahayaan","Presentase"};
             DefaultTabelku = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
@@ -283,8 +294,9 @@ public class FrameOutput extends javax.swing.JFrame {
                 String kolom2 = set.getString("akekokohan");
                 String kolom3 = set.getString("akuncipintujendela");
                 String kolom4 = set.getString("abahaya");
-                String kolom5 = set.getString("id");
-                String[] data = { kolom2, kolom3, kolom4, kolom5};
+                String kolom5 = set.getString("persenaman");
+                 String kolom6 = set.getString("id");
+                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6};
                 DefaultTabelku.addRow(data);
             }
 
@@ -296,6 +308,9 @@ public class FrameOutput extends javax.swing.JFrame {
             kolom.setPreferredWidth(145);
             kolom = jTabel1.getColumnModel().getColumn(2);
             kolom.setPreferredWidth(217);
+            kolom = jTabel1.getColumnModel().getColumn(3);
+            kolom.setPreferredWidth(217);
+          
             
             
         } catch (SQLException e) {
@@ -304,7 +319,7 @@ public class FrameOutput extends javax.swing.JFrame {
     }
     private void tableModel7(JTable jTabel1,String KR) {
         try {
-            Object[] field = { "Lantai", "Dinding", "Atap", "Pintu","Jendela","ID"};
+            Object[] field = { "Lantai", "Dinding", "Atap", "Pintu","Jendela","ID","Presentase"};
             DefaultTabelku = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
@@ -325,7 +340,8 @@ public class FrameOutput extends javax.swing.JFrame {
                 String kolom5 = set.getString("apintu");
                 String kolom6 = set.getString("ajendela");
                 String kolom7 = set.getString("id");
-                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6,kolom7};
+                String kolom8 = set.getString("persenbersih");
+                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8};
                 DefaultTabelku.addRow(data);
             }
 
@@ -342,6 +358,8 @@ public class FrameOutput extends javax.swing.JFrame {
             kolom.setPreferredWidth(240);
             kolom = jTabel1.getColumnModel().getColumn(4);
             kolom.setPreferredWidth(240);
+            kolom = jTabel1.getColumnModel().getColumn(6);
+            kolom.setPreferredWidth(240);
             kolom = jTabel1.getColumnModel().getColumn(5);
             kolom.setPreferredWidth(0);
             kolom.setMinWidth(0);
@@ -353,7 +371,7 @@ public class FrameOutput extends javax.swing.JFrame {
     }
     private void tableModel6(JTable jTabel1,String KR) {
         try {
-            Object[] field = { "Kebisingan", "Bau", "Bocor", "Rusak","Aus","ID"};
+            Object[] field = { "Kebisingan", "Bau", "Bocor", "Rusak","Aus","ID","Presentase"};
             DefaultTabelku = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
@@ -374,7 +392,8 @@ public class FrameOutput extends javax.swing.JFrame {
                 String kolom5 = set.getString("arusak");
                 String kolom6 = set.getString("aaus");
                 String kolom7 = set.getString("id");
-                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6,kolom7};
+                 String kolom8 = set.getString("persennyaman");
+                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8};
                 DefaultTabelku.addRow(data);
             }
 
@@ -391,6 +410,8 @@ public class FrameOutput extends javax.swing.JFrame {
             kolom.setPreferredWidth(240);
             kolom = jTabel1.getColumnModel().getColumn(4);
             kolom.setPreferredWidth(240);
+            kolom = jTabel1.getColumnModel().getColumn(6);
+            kolom.setPreferredWidth(240);
             kolom = jTabel1.getColumnModel().getColumn(5);
             kolom.setPreferredWidth(0);
             kolom.setMinWidth(0);
@@ -402,7 +423,7 @@ public class FrameOutput extends javax.swing.JFrame {
     }
     private void tableModel5(JTable jTabel1,String KR) {
         try {
-            Object[] field = { "Sirkulasi Udara", "Pencahayaan", "Kelembaban", "Suhu","ID"};
+            Object[] field = { "Sirkulasi Udara", "Pencahayaan", "Kelembaban", "Suhu","ID","Presentase"};
             DefaultTabelku = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
@@ -422,7 +443,8 @@ public class FrameOutput extends javax.swing.JFrame {
                 String kolom4 = set.getString("alembab");
                 String kolom5 = set.getString("asuhu");
                 String kolom6 = set.getString("id");
-                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6};
+                String kolom7 = set.getString("persenlingkungan");
+                String[] data = { kolom2, kolom3, kolom4, kolom5,kolom6,kolom7};
                 DefaultTabelku.addRow(data);
             }
 
@@ -438,7 +460,9 @@ public class FrameOutput extends javax.swing.JFrame {
             kolom = jTabel1.getColumnModel().getColumn(3);
             kolom.setPreferredWidth(240);
             
-            kolom = jTabel1.getColumnModel().getColumn(4);
+            kolom = jTabel1.getColumnModel().getColumn(5);
+            kolom.setPreferredWidth(240);
+             kolom = jTabel1.getColumnModel().getColumn(4);
             kolom.setPreferredWidth(0);
             kolom.setMinWidth(0);
             kolom.setMaxWidth(0);
@@ -832,7 +856,7 @@ public class FrameOutput extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrameOutput("4").setVisible(true);
+                new FrameOutput("1").setVisible(true);
             }
         });
     }
