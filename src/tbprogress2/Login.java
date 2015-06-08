@@ -65,16 +65,17 @@ public class Login extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == login) {
-           
-            
             if (nama.getSelectedItem().equals("Eko") && pas.getText().equals("167")) {
                 JOptionPane.showMessageDialog(null, "Welcome " + nama.getSelectedItem());
+                dispose();
                 new DataAwal().setVisible(true);
             } else if (nama.getSelectedItem().equals("Deny") && pas.getText().equals("175")) {
                 JOptionPane.showMessageDialog(null, "Welcome " + nama.getSelectedItem());
+                dispose();
                 new DataAwal().setVisible(true);
             } else if (nama.getSelectedItem().equals("Reinka") && pas.getText().equals("178")) {
                 JOptionPane.showMessageDialog(null, "Welcome " + nama.getSelectedItem());
+                dispose();
                 new DataAwal().setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(null, "Login Failed!!!");
