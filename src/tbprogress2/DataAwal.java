@@ -32,16 +32,14 @@ public class DataAwal extends javax.swing.JFrame {
     private Integer baris;
     private Connect con = new Connect();
     private JTable Tabelku = new JTable();
-    private DefaultTableModel DefaultTabelku;
-    private TableColumn kolom;
+    private DefaultTableModel TabelDasar;
+    private TableColumn kol;
     private String a, b,c,d,e,f,g;
     private String C,D,E,F,G,kode;
     
     
     public DataAwal() {
         initComponents();
-        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
         HasilAnalisa.setVisible(false);
         Save.setVisible(false);
         btnSelesai.setVisible(false);
@@ -52,10 +50,6 @@ public class DataAwal extends javax.swing.JFrame {
         setTitle("Identitas Ruang");
         con.koneksi();
         tampilDataKeTabel();
-//        enableBtn(false);
-//        enviBtnSave(true);
-//        enviBtnSave2(false);
-//        enviBtnNew(false);
         
         CODE.setVisible(false);
         Delete.setVisible(false);
@@ -120,25 +114,25 @@ public class DataAwal extends javax.swing.JFrame {
     private void klikTabel(JTable jTabel) {
         jTabel.setRowSelectionAllowed(true);
         baris = jTabel.getSelectedRow();
-        String kolom1 = jTabel.getValueAt(baris, 0).toString();
-        String kolom2 = jTabel.getValueAt(baris, 1).toString();
-        String kolom3 = jTabel.getValueAt(baris, 2).toString();
-        String kolom4 = jTabel.getValueAt(baris, 3).toString();
-        String kolom5 = jTabel.getValueAt(baris, 4).toString();
-        String kolom6 = jTabel.getValueAt(baris, 5).toString();
+        String kol1 = jTabel.getValueAt(baris, 0).toString();
+        String kol2 = jTabel.getValueAt(baris, 1).toString();
+        String kol3 = jTabel.getValueAt(baris, 2).toString();
+        String kol4 = jTabel.getValueAt(baris, 3).toString();
+        String kol5 = jTabel.getValueAt(baris, 4).toString();
+        String kol6 = jTabel.getValueAt(baris, 5).toString();
         HasilAnalisa.setVisible(true);
-        NM.setText(kolom2);
-        //txt_nama2.setText(kolom2);
-        LK.setText(kolom3);
+        NM.setText(kol2);
+        //txt_nama2.setText(kol2);
+        LK.setText(kol3);
        
-        JR.setText(kolom4);
-        //cmb_fakultas.setSelectedItem(kolom5);
-        FK.setText(kolom5);
-        NM2.setText(kolom2);
-        LK2.setText(kolom3);
-        JR2.setText(kolom4);
-        FK2.setText(kolom5);
-        CODE.setText(kolom6);
+        JR.setText(kol4);
+        //cmb_fakultas.setSelectedItem(kol5);
+        FK.setText(kol5);
+        NM2.setText(kol2);
+        LK2.setText(kol3);
+        JR2.setText(kol4);
+        FK2.setText(kol5);
+        CODE.setText(kol6);
         Delete.setVisible(true);
         Edit.setVisible(true);
         Save.setVisible(false);
@@ -152,9 +146,9 @@ public class DataAwal extends javax.swing.JFrame {
             ResultSet Set = St.executeQuery(Sql);
             
             while (Set.next()) {
-                String kolom1 = Set.getString("nama");
-                String kolom2 = Set.getString("lokasi");
-                if(kolom1.equalsIgnoreCase(NM.getText())&&kolom2.equalsIgnoreCase(LK.getText())){
+                String kol1 = Set.getString("nama");
+                String kol2 = Set.getString("lokasi");
+                if(kol1.equalsIgnoreCase(NM.getText())&&kol2.equalsIgnoreCase(LK.getText())){
                     JOptionPane.showMessageDialog(null, "Nama Ruang Sudah Ada");
                     //System.out.println(""+IDKelas.getText());
                     break;
@@ -178,13 +172,13 @@ public class DataAwal extends javax.swing.JFrame {
     private void tableModel(JTable jTabel1) {
         try {
             Object[] field = {"No", "Nama", "Lokasi", "Prodi", "Fakultas","ID"};
-            DefaultTabelku = new DefaultTableModel(null, field){
+            TabelDasar = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
             }
     };
             
-            jTabel1.setModel(DefaultTabelku);
+            jTabel1.setModel(TabelDasar);
 
             String sql = "Select * from identitas";
             Statement st = con.config.getConnection().createStatement();
@@ -193,33 +187,33 @@ public class DataAwal extends javax.swing.JFrame {
             int no = 0;
             while (set.next()) {
                 no++;
-                String kolom1 = String.valueOf(no).toString();
-                String kolom2 = set.getString("nama");
-                String kolom3 = set.getString("lokasi");
-                String kolom4 = set.getString("prodi");
-                String kolom5 = set.getString("fakultas");
-                String kolom6 = set.getString("id");
-                String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6};
-                DefaultTabelku.addRow(data);
+                String kol1 = String.valueOf(no).toString();
+                String kol2 = set.getString("nama");
+                String kol3 = set.getString("lokasi");
+                String kol4 = set.getString("prodi");
+                String kol5 = set.getString("fakultas");
+                String kol6 = set.getString("id");
+                String[] data = {kol1, kol2, kol3, kol4, kol5,kol6};
+                TabelDasar.addRow(data);
             }
 
             jTabel1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
             
-            kolom = jTabel1.getColumnModel().getColumn(0);
-            kolom.setPreferredWidth(40);
-            kolom = jTabel1.getColumnModel().getColumn(1);
-            kolom.setPreferredWidth(145);
-            kolom = jTabel1.getColumnModel().getColumn(2);
-            kolom.setPreferredWidth(217);
-            kolom = jTabel1.getColumnModel().getColumn(3);
-            kolom.setPreferredWidth(220);
-            kolom = jTabel1.getColumnModel().getColumn(4);
-            kolom.setPreferredWidth(240);
-            kolom = jTabel1.getColumnModel().getColumn(5);
-            kolom.setPreferredWidth(0);
-            kolom.setMinWidth(0);
-            kolom.setMaxWidth(0);
-            kolom.setWidth(0);
+            kol = jTabel1.getColumnModel().getColumn(0);
+            kol.setPreferredWidth(40);
+            kol = jTabel1.getColumnModel().getColumn(1);
+            kol.setPreferredWidth(145);
+            kol = jTabel1.getColumnModel().getColumn(2);
+            kol.setPreferredWidth(217);
+            kol = jTabel1.getColumnModel().getColumn(3);
+            kol.setPreferredWidth(220);
+            kol = jTabel1.getColumnModel().getColumn(4);
+            kol.setPreferredWidth(240);
+            kol = jTabel1.getColumnModel().getColumn(5);
+            kol.setPreferredWidth(0);
+            kol.setMinWidth(0);
+            kol.setMaxWidth(0);
+            kol.setWidth(0);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
         }
@@ -531,7 +525,7 @@ public class DataAwal extends javax.swing.JFrame {
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         //KondisiSaveButton();
-                        da.Save(NM, LK, JR, FK);
+                       da.Save(NM, LK, JR, FK);
                        tampilDataKeTabel();
                        Save.setVisible(false);
                        ADD.setVisible(true);
@@ -548,7 +542,7 @@ public class DataAwal extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
-       NM.setEditable(true);
+        NM.setEditable(true);
         FK.setEditable(true);
         LK.setEditable(true);
         JR.setEditable(true);
