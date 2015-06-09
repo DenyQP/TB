@@ -1147,7 +1147,7 @@ private boolean DiEdit() {
         
          n.CheckKondisiSarana2(kls,IDKelas.getText());
          dispose();
-         x.inputKondisiLingkungan(IDKelas.getText());
+         x.inputKondisiKebersihan(IDKelas.getText());
         
     }//GEN-LAST:event_NextActionPerformed
 
