@@ -122,11 +122,8 @@ public class DataAwal extends javax.swing.JFrame {
         String kol6 = jTabel.getValueAt(baris, 5).toString();
         HasilAnalisa.setVisible(true);
         NM.setText(kol2);
-        //txt_nama2.setText(kol2);
         LK.setText(kol3);
-       
         JR.setText(kol4);
-        //cmb_fakultas.setSelectedItem(kol5);
         FK.setText(kol5);
         NM2.setText(kol2);
         LK2.setText(kol3);

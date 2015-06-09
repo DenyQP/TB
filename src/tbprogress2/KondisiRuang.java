@@ -132,7 +132,7 @@ public class KondisiRuang extends javax.swing.JFrame {
   
   }
     public void nyeret1(){
-            txtValue.setEditable(false);	
+                txtValue.setEditable(false);	
 	        txtValue.setText(null);	
 	        slider.setMinorTickSpacing(5);	
 	        slider.setMajorTickSpacing(20);	
