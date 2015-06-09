@@ -32,8 +32,8 @@ public class KondisiKeamanan extends javax.swing.JFrame {
     private Integer baris;
     private Connect con = new Connect();
     private JTable Tabelku = new JTable();
-    private DefaultTableModel DefaultTabelku;
-    private TableColumn kolom;
+    private DefaultTableModel TabelDasar;
+    private TableColumn kol;
     private String a, b,c,d,e,f,g;
     private String C,D,E,F,G,kode;
     KondisiKeamanan(String KR) {
@@ -53,10 +53,6 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         con.koneksi();
         IDKelas.setEditable(false);
         tampilDataKeTabel();
-//        enableBtn(false);
-//        enviBtnSave(true);
-//        enviBtnSave2(false);
-//        enviBtnNew(false);
         KondisiAddButton();
         CODE.setVisible(false);
         Delete.setVisible(false);
@@ -96,14 +92,10 @@ public class KondisiKeamanan extends javax.swing.JFrame {
            new DataAwal().setVisible(true);
         }
   
-  //System.out.println("hii!! i am hidden!!");
+ 
 
   }
     
-
-//    KondisiKeamanan(String KR) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
      void KondisiAddButton(){
          try{
             String Sql = "Select id from keamanan ";
@@ -111,20 +103,17 @@ public class KondisiKeamanan extends javax.swing.JFrame {
             ResultSet Set = St.executeQuery(Sql);
             
             while (Set.next()) {
-                String kolom12 = Set.getString("id");
-                if(kolom12.equalsIgnoreCase(IDKelas.getText())){
+                String kol12 = Set.getString("id");
+                if(kol12.equalsIgnoreCase(IDKelas.getText())){
                     ADD.setVisible(false);
                     //System.out.println(""+IDKelas.getText());
                     break;
                 }
                 else{
                     ADD.setVisible(true);
-                    //System.out.println(""+IDKelas.getText());
+                   
                 }
-                //System.out.println(""+IDKelas.getText());
-              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
-                //DefaultTabelku.addRow(data);
-            }
+             }
          }
          catch(SQLException e){
              JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
@@ -156,11 +145,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
                         + "kokoh=" + "'" + a + "', "
                         + "kunci=" + "'" + b + "', "
                         + "bahaya=" + "'" + c + "' "
-                        + "where id_keamanan ='" + CODE.getText() 
-//                        +" and " +"kokoh=" + "'" + d + "' "+"and "
-//                                + "kunci=" + "'" + e + "' "+"and "
-//                                + "bahaya=" + "'" + f 
-                                +"'");
+                        + "where id_keamanan ='" + CODE.getText()+"'");
 
                 tampilDataKeTabel();
                 JOptionPane.showMessageDialog(this, "Data berhasil diperbaharui");
@@ -174,22 +159,22 @@ public class KondisiKeamanan extends javax.swing.JFrame {
     private void klikTabel(JTable jTabel) {
         jTabel.setRowSelectionAllowed(true);
         baris = jTabel.getSelectedRow();
-        String kolom1 = jTabel.getValueAt(baris, 0).toString();
-        String kolom2 = jTabel.getValueAt(baris, 1).toString();
-        String kolom3 = jTabel.getValueAt(baris, 2).toString();
-        String kolom4 = jTabel.getValueAt(baris, 3).toString();
-        String kolom5 = jTabel.getValueAt(baris, 4).toString();
-        String kolom6 = jTabel.getValueAt(baris, 5).toString();
-        if(IDKelas.getText().equals(kolom6)){
-        if("Kokoh".equalsIgnoreCase(kolom2)){
+        String kol1 = jTabel.getValueAt(baris, 0).toString();
+        String kol2 = jTabel.getValueAt(baris, 1).toString();
+        String kol3 = jTabel.getValueAt(baris, 2).toString();
+        String kol4 = jTabel.getValueAt(baris, 3).toString();
+        String kol5 = jTabel.getValueAt(baris, 4).toString();
+        String kol6 = jTabel.getValueAt(baris, 5).toString();
+        if(IDKelas.getText().equals(kol6)){
+        if("Kokoh".equalsIgnoreCase(kol2)){
             Kokoh.setSelected(true);
             Tkokoh.setSelected(false);
         }
-        else if("Rapuh".equalsIgnoreCase(kolom2)) {
+        else if("Rapuh".equalsIgnoreCase(kol2)) {
             Kokoh.setSelected(false);
             Tkokoh.setSelected(true);
         }
-            if("Terkunci".equalsIgnoreCase(kolom3)){
+            if("Terkunci".equalsIgnoreCase(kol3)){
                 Adakunci.setSelected(true);
                 Tkunci.setSelected(false);
             }
@@ -197,7 +182,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
                 Adakunci.setSelected(false);
                 Tkunci.setSelected(true);
             }
-                if("Aman".equalsIgnoreCase(kolom4)){
+                if("Aman".equalsIgnoreCase(kol4)){
                     Bahaya.setSelected(false);
                     Aman.setSelected(true);
                 }
@@ -205,16 +190,16 @@ public class KondisiKeamanan extends javax.swing.JFrame {
                     Aman.setSelected(false);
                     Bahaya.setSelected(true);
                 }
-        FK.setText(kolom2);
-        FPJ.setText(kolom3);
-        FB.setText(kolom4);
+        FK.setText(kol2);
+        FPJ.setText(kol3);
+        FB.setText(kol4);
         Kokoh.setEnabled(false);
         Tkokoh.setEnabled(false);
         Adakunci.setEnabled(false);
         Tkunci.setEnabled(false);
         Aman.setEnabled(false);
         Bahaya.setEnabled(false);
-        CODE.setText(kolom5);
+        CODE.setText(kol5);
        // System.out.println(""+CODE.getText());
         Delete.setVisible(true);
         Edit.setVisible(true);
@@ -236,13 +221,13 @@ public class KondisiKeamanan extends javax.swing.JFrame {
     private void tableModel(JTable jTabel1) {
         try {
             Object[] field = {"No", "Kekokohan", "Kunci Pintu Jendela", "Bahaya", "ID","ID RUANG"};
-            DefaultTabelku = new DefaultTableModel(null, field){
+            TabelDasar = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
             }
     };
             
-            jTabel1.setModel(DefaultTabelku);
+            jTabel1.setModel(TabelDasar);
 
             String sql = "Select * from keamanan ";
             Statement st = con.config.getConnection().createStatement();
@@ -251,33 +236,33 @@ public class KondisiKeamanan extends javax.swing.JFrame {
             int no = 0;
             while (set.next()) {
                 no++;
-                String kolom1 = String.valueOf(no).toString();
-                String kolom2 = set.getString("kokoh");
-                String kolom3 = set.getString("kunci");
-                String kolom4 = set.getString("bahaya");
-                String kolom5 = set.getString("id_keamanan");
-                String kolom6 = set.getString("id");
-                String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6};
-                DefaultTabelku.addRow(data);
+                String kol1 = String.valueOf(no).toString();
+                String kol2 = set.getString("kokoh");
+                String kol3 = set.getString("kunci");
+                String kol4 = set.getString("bahaya");
+                String kol5 = set.getString("id_keamanan");
+                String kol6 = set.getString("id");
+                String[] data = {kol1, kol2, kol3, kol4, kol5,kol6};
+                TabelDasar.addRow(data);
             }
 
             jTabel1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
             
-            kolom = jTabel1.getColumnModel().getColumn(0);
-            kolom.setPreferredWidth(40);
-            kolom = jTabel1.getColumnModel().getColumn(1);
-            kolom.setPreferredWidth(145);
-            kolom = jTabel1.getColumnModel().getColumn(2);
-            kolom.setPreferredWidth(217);
-            kolom = jTabel1.getColumnModel().getColumn(3);
-            kolom.setPreferredWidth(220);
-            kolom = jTabel1.getColumnModel().getColumn(4);
-            kolom.setPreferredWidth(0);
-            kolom.setMinWidth(0);
-            kolom.setMaxWidth(0);
-            kolom.setWidth(0);
-             kolom = jTabel1.getColumnModel().getColumn(5);
-            kolom.setPreferredWidth(220);
+            kol = jTabel1.getColumnModel().getColumn(0);
+            kol.setPreferredWidth(40);
+            kol = jTabel1.getColumnModel().getColumn(1);
+            kol.setPreferredWidth(145);
+            kol = jTabel1.getColumnModel().getColumn(2);
+            kol.setPreferredWidth(217);
+            kol = jTabel1.getColumnModel().getColumn(3);
+            kol.setPreferredWidth(220);
+            kol = jTabel1.getColumnModel().getColumn(4);
+            kol.setPreferredWidth(0);
+            kol.setMinWidth(0);
+            kol.setMaxWidth(0);
+            kol.setWidth(0);
+             kol = jTabel1.getColumnModel().getColumn(5);
+            kol.setPreferredWidth(220);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
         }
@@ -746,24 +731,11 @@ public class KondisiKeamanan extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void HasilAnalisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HasilAnalisaActionPerformed
-//        if(Kokoh.setSelected(false) || Tkokoh.setSelected(false) || Adakunci.setSelected(false) || Tkunci.setSelected(false)||Aman.setSelected(false)||Bahaya.setSelected(false)){
-//            JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
-//            ADD.setVisible(true);
-//            Save.setVisible(false);
-//        }
-        
+
         IO x = new IO(Kokoh,Tkokoh,Adakunci,Tkunci,Aman,Bahaya);
         Sistem n = new Sistem();
         kls = x.getRuangKelas();
-        x.output(kls.getKekokohan(), kls.getKunciPintuJendela(), kls.getBahaya());
         n.CheckKondisiKeamanan(kls,IDKelas.getText());
-//        if (s == 1) {
-//            System.out.println("s");
-//            kon = 1;
-//        } else {
-//            System.out.println("Tidak s");
-//            kon = 0;
-//        }
         
         dispose();
             x.IdentitasKelas();
@@ -874,7 +846,7 @@ public class KondisiKeamanan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KondisiKeamanan("4").setVisible(true);
+                new KondisiKeamanan("1").setVisible(true);
             }
         });
     }

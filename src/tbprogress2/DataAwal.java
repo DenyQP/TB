@@ -166,11 +166,9 @@ public class DataAwal extends javax.swing.JFrame {
                        ADD.setVisible(true);
                        clearTEXT();
                        Next.setVisible(false);
-                    //System.out.println(""+IDKelas.getText());
+                    
                 }
-                //System.out.println(""+IDKelas.getText());
-              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
-                //DefaultTabelku.addRow(data);
+                
             }
          }
          catch(SQLException e){
@@ -597,7 +595,9 @@ public class DataAwal extends javax.swing.JFrame {
 
     private void HasilAnalisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HasilAnalisaActionPerformed
         dispose();
-        new FrameOutput(CODE.getText()).setVisible(true);
+        IO ok = new IO();
+        ok.output(CODE.getText());
+        
     }//GEN-LAST:event_HasilAnalisaActionPerformed
     private void tampilDataKeTabel() {
         Tabelku = jTable1;

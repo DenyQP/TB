@@ -28,7 +28,7 @@ DatabaseWork(){
      DefaultTableModel DefaultTabelku;
      TableColumn kolom;
      String a, b,c,d,e,f,g,h,i,j,k,l;
-//     DataAwal DA = new DataAwal();
+
      
     void Save(JTextField NM,JTextField LK,JTextField JR, JTextField FK) {
         

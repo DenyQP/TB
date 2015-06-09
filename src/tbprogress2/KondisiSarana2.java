@@ -29,8 +29,8 @@ public class KondisiSarana2 extends javax.swing.JFrame {
     private Integer baris;
     private Connect con = new Connect();
     private JTable Tabelku = new JTable();
-    private DefaultTableModel DefaultTabelku;
-    private TableColumn kolom;
+    private DefaultTableModel TabelDasar;
+    private TableColumn kol;
     private String a, b,c,d,e,f,g;
     private String C,D,E,F,G,kode;
    
@@ -47,21 +47,14 @@ public class KondisiSarana2 extends javax.swing.JFrame {
         IDKelas.setEditable(false);
         IDKelas.setText(KR);
         tampilDataKeTabel();
-//        enableBtn(false);
-//        enviBtnSave(true);
-//        enviBtnSave2(false);
-//        enviBtnNew(false);
+
         CODE.setVisible(false);
         Delete.setVisible(false);
         Edit.setVisible(false);
         
         Enable_TextField2(false);
         Enable_TextField1(false);
-//        for(int x=0;x<1000;x++){
-//            if(IDKelas.getText().equals(x)){
-//            
-//            }
-//        }
+
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         Dimension frameSize = this.getSize();
         if (frameSize.height > screenSize.height) {
@@ -91,7 +84,6 @@ public class KondisiSarana2 extends javax.swing.JFrame {
            new DataAwal().setVisible(true);
         }
   
-  //System.out.println("hii!! i am hidden!!");
 
   }
 
@@ -133,10 +125,9 @@ public class KondisiSarana2 extends javax.swing.JFrame {
         
     }
 private boolean DiEdit() {
-//        RuangKelas kls = new RuangKelas();
-//        RuangKelas rk;
+
         IO x = new IO( jka, pkab,pkar, kkab, kkar, jac, pacs, pacd, pacb, kacb, kacr, ssid,bb, bt,jcctv, kcctvb, kcctvr, pcctvb, pcctvr);
-        //Sistem nn = new Sistem();
+
         kls = x.getRuangKelas();
         boolean nilai = false;
         
@@ -153,82 +144,18 @@ private boolean DiEdit() {
         String j = pacd.getText();
         String k = pacb.getText();
         String l = ssid.getText();
-//        
-//        String m = bb.getText();
-//        String n = bt.getText();
+
         String o = jcctv.getText();
         String p = kcctvb.getText();
         String q = kcctvr.getText();
         String r = pcctvb.getText();
         String s = pcctvr.getText();
         
-//        int A = Integer.parseInt(kkab.getText());
-//        int B = Integer.parseInt(kkar.getText());
-//        if(A>=B){
-//            kls.setKondisiKipasAngin("Baik");
-//        }
-//        else{
-//            kls.setKondisiKipasAngin("Rusak");
-//        }
-//        int C,D;
-//        C = Integer.parseInt(pkab.getText());
-//        D = Integer.parseInt(pkar.getText());
-//        
-//        if(C>=D){
-//            kls.setPosisiKipasAngin("Atap Ruangan");
-//        }
-//        else{
-//            kls.setPosisiKipasAngin("Samping Ruangan");
-//        }
-//        int E = Integer.parseInt(jac.getText());
-//        int F,G;
-//        F = Integer.parseInt(kacb.getText());
-//        G = Integer.parseInt(kacr.getText());
-//        if(F>=G){
-//            kls.setKondisiAC("Baik");
-//        }
-//        else{
-//            kls.setKondisiAC("Rusak");
-//        }
-//        String BND = kls.getBandwidth();
-//        int H,I,J;
-//        H = Integer.parseInt(pacs.getText());
-//        I = Integer.parseInt(pacd.getText());
-//        J = Integer.parseInt(pacb.getText());
-//        if(H>=I || J>=I){
-//            kls.setPosisiAC("DSamping/Belakang");
-//        }
-//        else{
-//            kls.setPosisiAC("Depan");
-//        }
-//        int K = Integer.parseInt(ssid.getText());
-//        int L,M;
-//        K = Integer.parseInt(bb.getText());
-//        L = Integer.parseInt(bt.getText());
-//        if(K>=L){
-//            kls.setKondisiLampu("Baik");
-//        }
-//        else{
-//            kls.setKondisiLampu("Rusak");
-//        }
-//        int M,N;
-//        M = Integer.parseInt(klb.getText());
-//        N = Integer.parseInt(klr.getText());
-//        if(M>=N){
-//            kls.setPosisiLampu("Atap Ruangan");
-//        }
-//        else{
-//            kls.setPosisiLampu("Selain Atap Ruangan");
-//        }
-
        try {
             if (a.equals("") || b.equals("") || c.equals("") || d.equals("")||e.equals("") || f.equals("") || g.equals("") || h.equals("")||i.equals("") || j.equals("") || k.equals("") || l.equals("")||(!bb.isSelected() && !bt.isSelected()) || o.equals("") || p.equals("")||q.equals("")) {
                 JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
                 nilai=true;
                 clearTEXT();
-//            } else if (a.equals(c) && E.equals(e) && b.equals(d) && F.equals(f)) {
-//                JOptionPane.showMessageDialog(null, "Tidak ada data yang di perbaharui!");
-//                nilai = false;
             } else {
                 Statement st = con.config.getConnection().createStatement();
                 st.executeUpdate(
@@ -305,21 +232,21 @@ private boolean DiEdit() {
     private void klikTabel(JTable jTabel) {
         jTabel.setRowSelectionAllowed(true);
         baris = jTabel.getSelectedRow();
-        String kolom1 = jTabel.getValueAt(baris, 0).toString();
-        String kolom2 = jTabel.getValueAt(baris, 1).toString();
-        String kolom3 = jTabel.getValueAt(baris, 2).toString();
-        String kolom4 = jTabel.getValueAt(baris, 3).toString();
-        String kolom5 = jTabel.getValueAt(baris, 4).toString();
-        String kolom6 = jTabel.getValueAt(baris, 5).toString();
-        String kolom7 = jTabel.getValueAt(baris, 6).toString();
-        String kolom8 = jTabel.getValueAt(baris, 7).toString();
-        String kolom9 = jTabel.getValueAt(baris, 8).toString();
-        String kolom10 = jTabel.getValueAt(baris, 9).toString();
-        String kolom11 = jTabel.getValueAt(baris, 10).toString();
-        String kolom12 = jTabel.getValueAt(baris, 11).toString();
-        String kolom13 = jTabel.getValueAt(baris, 12).toString();
-        String kolom14 = jTabel.getValueAt(baris, 13).toString();
-        if(IDKelas.getText().equals(kolom14)){
+        String kol1 = jTabel.getValueAt(baris, 0).toString();
+        String kol2 = jTabel.getValueAt(baris, 1).toString();
+        String kol3 = jTabel.getValueAt(baris, 2).toString();
+        String kol4 = jTabel.getValueAt(baris, 3).toString();
+        String kol5 = jTabel.getValueAt(baris, 4).toString();
+        String kol6 = jTabel.getValueAt(baris, 5).toString();
+        String kol7 = jTabel.getValueAt(baris, 6).toString();
+        String kol8 = jTabel.getValueAt(baris, 7).toString();
+        String kol9 = jTabel.getValueAt(baris, 8).toString();
+        String kol10 = jTabel.getValueAt(baris, 9).toString();
+        String kol11 = jTabel.getValueAt(baris, 10).toString();
+        String kol12 = jTabel.getValueAt(baris, 11).toString();
+        String kol13 = jTabel.getValueAt(baris, 12).toString();
+        String kol14 = jTabel.getValueAt(baris, 13).toString();
+        if(IDKelas.getText().equals(kol14)){
                 jka.setEditable(false);
                 jac.setEditable(false);
                 jcctv.setEditable(false);
@@ -344,18 +271,16 @@ private boolean DiEdit() {
         jac.setEnabled(true);
         jcctv.setEnabled(true);
         
-        jka.setText(kolom2);
+        jka.setText(kol2);
         
-        kondisiKA.setText(kolom3);
-        posisiKA.setText(kolom4);
-        
-        
-        
-        jac.setText(kolom5);
-        kondisiAC.setText(kolom6);
-        posisiAC.setText(kolom7);
-        ssid.setText(kolom8);
-        if(kolom9.equalsIgnoreCase("Bisa")){
+        kondisiKA.setText(kol3);
+        posisiKA.setText(kol4);
+
+        jac.setText(kol5);
+        kondisiAC.setText(kol6);
+        posisiAC.setText(kol7);
+        ssid.setText(kol8);
+        if(kol9.equalsIgnoreCase("Bisa")){
             bb.setSelected(true);
             bt.setSelected(false);
         }
@@ -363,9 +288,9 @@ private boolean DiEdit() {
             bb.setSelected(false);
             bt.setSelected(true);
         }
-        jcctv.setText(kolom10);
-        kondisiCCTV.setText(kolom11);
-        posisiCCTV.setText(kolom12);
+        jcctv.setText(kol10);
+        kondisiCCTV.setText(kol11);
+        posisiCCTV.setText(kol12);
         
        
         
@@ -399,8 +324,8 @@ private boolean DiEdit() {
         kcctvr.setEnabled(false);
         pcctvb.setEnabled(false);
         pcctvr.setEnabled(false);
-        CODE.setText(kolom13);
-        IDKelas.setText(kolom14);
+        CODE.setText(kol13);
+        IDKelas.setText(kol14);
             System.out.println(""+CODE.getText());
        // System.out.println(""+CODE.getText());
         Delete.setVisible(true);
@@ -447,14 +372,14 @@ private boolean DiEdit() {
     private void tableModel(JTable jTabel1) {
         try {
             Object[] field = {"No", "Jumlah Kipas Angin", "Kondisi Kipas Angin", "Posisi Kipas Angin","Jumlah AC","Kondisi AC","Posisi AC","SSID","Bandwidth","Jumlah CCTV","Kondisi CCTV","Posisi CCTV","ID","ID RUANG"};
-            DefaultTabelku = new DefaultTableModel(null, field){
+            TabelDasar = new DefaultTableModel(null, field){
                 public boolean isCellEditable(int row, int column) {
                 return false;
             }
     };
             
-            jTabel1.setModel(DefaultTabelku);
-//Batas
+            jTabel1.setModel(TabelDasar);
+
             String sql = "Select * from jkp_sarana2 ";
             Statement st = con.config.getConnection().createStatement();
             ResultSet set = st.executeQuery(sql);
@@ -464,8 +389,8 @@ private boolean DiEdit() {
             ResultSet Set = St.executeQuery(Sql);
             
             while (Set.next()) {
-                String kolom14 = Set.getString("id");
-                if(kolom14.equalsIgnoreCase(IDKelas.getText())){
+                String kol14 = Set.getString("id");
+                if(kol14.equalsIgnoreCase(IDKelas.getText())){
                     Add.setVisible(false);
                     break;
                 }
@@ -474,70 +399,63 @@ private boolean DiEdit() {
                     
                 }
                 System.out.println(""+IDKelas.getText());
-              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
-                //DefaultTabelku.addRow(data);
+             
             }
             int no = 0;
             while (set.next()) {
                 no++;
-                String kolom1 = String.valueOf(no).toString();
-                String kolom2 = set.getString("JKipasAngin");
-                String kolom3 = set.getString("KKipasAngin");
-                String kolom4 = set.getString("PKipasAngin");
-                String kolom5 = set.getString("JAC");
-                String kolom6 = set.getString("KAC");
-                String kolom7 = set.getString("PAC");
-                String kolom8 = set.getString("SSID");
-                String kolom9 = set.getString("bandwidth");
-                String kolom10 = set.getString("JCCTV");
-                String kolom11 = set.getString("KCCTV");
-                String kolom12 = set.getString("PCCTV");
-                String kolom13 = set.getString("id_sarana2");
-                String kolom14 = set.getString("id");
+                String kol1 = String.valueOf(no).toString();
+                String kol2 = set.getString("JKipasAngin");
+                String kol3 = set.getString("KKipasAngin");
+                String kol4 = set.getString("PKipasAngin");
+                String kol5 = set.getString("JAC");
+                String kol6 = set.getString("KAC");
+                String kol7 = set.getString("PAC");
+                String kol8 = set.getString("SSID");
+                String kol9 = set.getString("bandwidth");
+                String kol10 = set.getString("JCCTV");
+                String kol11 = set.getString("KCCTV");
+                String kol12 = set.getString("PCCTV");
+                String kol13 = set.getString("id_sarana2");
+                String kol14 = set.getString("id");
                 
-//                if(kolom12.equals(IDKelas.getText())){
-//                    ADD.setVisible(false);
-//                }
-//                else{
-//                    ADD.setVisible(false);
-//                }
-                String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12,kolom13,kolom14};
-                DefaultTabelku.addRow(data);
+                String[] data = {kol1, kol2, kol3, kol4, kol5,kol6,kol7,kol8,kol9,kol10,kol11,kol12,kol13,kol14};
+                TabelDasar.addRow(data);
             }
 
             jTabel1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
             
-            kolom = jTabel1.getColumnModel().getColumn(0);
-            kolom.setPreferredWidth(40);
-            kolom = jTabel1.getColumnModel().getColumn(1);
-            kolom.setPreferredWidth(145);
-            kolom = jTabel1.getColumnModel().getColumn(2);
-            kolom.setPreferredWidth(217);
-            kolom = jTabel1.getColumnModel().getColumn(3);
-            kolom.setPreferredWidth(220);
-            kolom = jTabel1.getColumnModel().getColumn(4);
-            kolom.setPreferredWidth(145);
-            kolom = jTabel1.getColumnModel().getColumn(5);
-            kolom.setPreferredWidth(217);
-            kolom = jTabel1.getColumnModel().getColumn(6);
-            kolom.setPreferredWidth(220);
-            kolom = jTabel1.getColumnModel().getColumn(7);
-            kolom.setPreferredWidth(145);
-            kolom = jTabel1.getColumnModel().getColumn(8);
-            kolom.setPreferredWidth(217);
-            kolom = jTabel1.getColumnModel().getColumn(9);
-            kolom.setPreferredWidth(220);
-            kolom = jTabel1.getColumnModel().getColumn(10);
-            kolom.setPreferredWidth(217);
-            kolom = jTabel1.getColumnModel().getColumn(11);
-            kolom.setPreferredWidth(217);
-            kolom = jTabel1.getColumnModel().getColumn(12);
-            kolom.setPreferredWidth(0);
-            kolom.setMinWidth(0);
-            kolom.setMaxWidth(0);
-            kolom.setWidth(0);
-            kolom = jTabel1.getColumnModel().getColumn(13);
-            kolom.setPreferredWidth(220);
+            kol = jTabel1.getColumnModel().getColumn(0);
+            kol.setPreferredWidth(40);
+            kol = jTabel1.getColumnModel().getColumn(1);
+            kol.setPreferredWidth(145);
+            kol = jTabel1.getColumnModel().getColumn(2);
+            kol.setPreferredWidth(217);
+            kol = jTabel1.getColumnModel().getColumn(3);
+            kol.setPreferredWidth(220);
+            kol = jTabel1.getColumnModel().getColumn(4);
+            kol.setPreferredWidth(145);
+            kol = jTabel1.getColumnModel().getColumn(5);
+            kol.setPreferredWidth(217);
+            kol = jTabel1.getColumnModel().getColumn(6);
+            kol.setPreferredWidth(220);
+            kol = jTabel1.getColumnModel().getColumn(7);
+            kol.setPreferredWidth(145);
+            kol = jTabel1.getColumnModel().getColumn(8);
+            kol.setPreferredWidth(217);
+            kol = jTabel1.getColumnModel().getColumn(9);
+            kol.setPreferredWidth(220);
+            kol = jTabel1.getColumnModel().getColumn(10);
+            kol.setPreferredWidth(217);
+            kol = jTabel1.getColumnModel().getColumn(11);
+            kol.setPreferredWidth(217);
+            kol = jTabel1.getColumnModel().getColumn(12);
+            kol.setPreferredWidth(0);
+            kol.setMinWidth(0);
+            kol.setMaxWidth(0);
+            kol.setWidth(0);
+            kol = jTabel1.getColumnModel().getColumn(13);
+            kol.setPreferredWidth(220);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Koneksi gagal: " + e);
         }
@@ -1223,16 +1141,10 @@ private boolean DiEdit() {
 
     private void NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextActionPerformed
         
-        //IO x = new IO( jka, pkab,pkar, kkab, kkar, jac, pacs, pacd, pacb, kacb, kacr, ssid,bb, bt,jcctv, kcctvb, kcctvr, pcctvb, pcctvr);
         IO x = new IO( jka, posisiKA, kondisiKA, jac, kondisiAC, posisiAC, ssid, bb, bt,jcctv,kondisiCCTV , posisiCCTV);
         Sistem n = new Sistem();
         kls = x.getRuangKelas();
         
-//        x.output(kls.getJumlahKipasAngin(),kls.getPosisiKipasAngin(),kls.getKondisiKipasAngin(),kls.getJumlahAC(),
-//            kls.getKondisiAC(),kls.getPosisiAC(),kls.getSSID(),kls.getBandwidth(),kls.getJumlahCCTV(),
-//            kls.getKondisiCCTV(),kls.getPosisiCCTV());
-//       
-       // n.persentaseKondisiSarana();
          n.CheckKondisiSarana2(kls,IDKelas.getText());
          dispose();
          x.inputKondisiLingkungan(IDKelas.getText());
@@ -1251,46 +1163,7 @@ private boolean DiEdit() {
         
         tampilDataKeTabel();
         Add.setVisible(true);
-//        try{
-//            String Sql = "Select id from jkp_sarana2 ";
-//            Statement St = con.config.getConnection().createStatement();
-//            ResultSet Set = St.executeQuery(Sql);
-//            
-//            while (Set.next()) {
-//                String kolom14 = Set.getString("id");
-//                if(kolom14.equalsIgnoreCase(IDKelas.getText())){
-//                    Add.setVisible(false);
-//                    System.out.println("asd");
-//                    break;
-//                }
-//                else if(kolom14.equalsIgnoreCase(null)){
-//                    Add.setVisible(true);
-//                    System.out.println("goood");
-//                }
-//            }
-//         }
-//        catch(SQLException e){
-//            JOptionPane.showMessageDialog(null, "Koneksi gagal : "+e);
-//        }
-//        jka.setText(null);
-//        pkab.setText(null);
-//        pkar.setText(null);
-//        kkab.setText(null);
-//        kkar.setText(null);
-//        jac.setText(null);
-//        kacb.setText(null);
-//        kacr.setText(null);
-//        pacb.setText(null);
-//        pacs.setText(null);
-//        pacd.setText(null);
-//        ssid.setAction(null);
-//        bb.setText(null);
-//        bt.setText(null);
-//        jcctv.setText(null);
-//        kcctvb.setText(null);
-//        kcctvr.setText(null);
-//        pcctvb.setText(null);
-//        pcctvr.setText(null);
+//        
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void pcctvrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcctvrActionPerformed
@@ -1373,9 +1246,7 @@ private boolean DiEdit() {
            IO x = new IO(jka,pkab,pkar,kkab,kkar,jac,pacs,pacd,pacb,kacb,kacr,ssid,bb,bt,jcctv,kcctvb,kcctvr,pcctvb,pcctvr);
         kls = x.getRuangKelas();
         System.out.println(""+IDKelas.getText()+jka.getText()+kls.getPosisiKipasAngin()+kls.getKondisiKipasAngin()+jac.getText()+kls.getPosisiAC()+kls.getKondisiAC()+ssid.getText()+kls.getBandwidth()+jcctv.getText()+kls.getKondisiCCTV()+kls.getPosisiCCTV());
-        /////////String KodeR,JTextField jka,String pka,String kka,JTextField jac,String pac,String kac,JTextField ssid,String bw,JTextField jcctv,String kcctv,String pcctv
-       //////////String KodeR,JTextField jka,String pka,String kka,JTextField jac,String pac,String kac,JTextField ssid,String bw,JTextField jcctv,String kcctv,String pcctv){
-        
+
         da.Save(IDKelas.getText(),jka,kls.getPosisiKipasAngin(),kls.getKondisiKipasAngin(),jac,kls.getPosisiAC(),kls.getKondisiAC(),ssid,kls.getBandwidth(),jcctv,kls.getKondisiCCTV(),kls.getPosisiCCTV());
         tampilDataKeTabel();
         Save.setVisible(false);
@@ -1383,21 +1254,6 @@ private boolean DiEdit() {
         clearTEXT();
         kondisiklik(true);
         Next.setVisible(false);
-//        jka.setEnabled(false);
-//        pkab.setEnabled(false);
-//        pkar.setEnabled(false);
-//        kkab.setEnabled(false);
-//        kkar.setEnabled(false);
-//        pacs.setEnabled(false);
-//        pacd.setEnabled(false);
-//        pacb.setEnabled(false);
-//        kacb.setEnabled(false);
-//        kacr.setEnabled(false);
-//       
-//        kcctvb.setEnabled(false);
-//        kcctvr.setEnabled(false);
-//        pcctvb.setEnabled(false);
-//        pcctvr.setEnabled(false);
         Enable_TextField2(false);
         Enable_TextField1(false);
         jTable1.enable(true);
@@ -1407,8 +1263,8 @@ private boolean DiEdit() {
             ResultSet Set = St.executeQuery(Sql);
             
             while (Set.next()) {
-                String kolom12 = Set.getString("id");
-                if(kolom12.equalsIgnoreCase(IDKelas.getText())){
+                String kol12 = Set.getString("id");
+                if(kol12.equalsIgnoreCase(IDKelas.getText())){
                     Add.setVisible(false);
                     break;
                 }
@@ -1417,8 +1273,7 @@ private boolean DiEdit() {
                     
                 }
                 System.out.println(""+IDKelas.getText());
-              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
-                //DefaultTabelku.addRow(data);
+          
             }
         }
         catch (SQLException e) {
@@ -1469,8 +1324,8 @@ private boolean DiEdit() {
             ResultSet Set = St.executeQuery(Sql);
             
             while (Set.next()) {
-                String kolom12 = Set.getString("id");
-                if(kolom12.equalsIgnoreCase(IDKelas.getText())){
+                String kol12 = Set.getString("id");
+                if(kol12.equalsIgnoreCase(IDKelas.getText())){
                     Add.setVisible(false);
                     break;
                 }
@@ -1479,8 +1334,7 @@ private boolean DiEdit() {
                     
                 }
                 System.out.println(""+IDKelas.getText());
-              //  String[] data = {kolom1, kolom2, kolom3, kolom4, kolom5,kolom6,kolom7,kolom8,kolom9,kolom10,kolom11,kolom12};
-                //DefaultTabelku.addRow(data);
+          
             }
          }
          catch(SQLException e){
@@ -1488,7 +1342,6 @@ private boolean DiEdit() {
          }
          
         Delete.setVisible(false);
-        //ADD.setVisible(true);
         Edit.setVisible(false);
         Next.setVisible(false);
         jka.setEnabled(false);

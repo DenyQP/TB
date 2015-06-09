@@ -46,10 +46,8 @@ public class Sistem extends Proses{
     }
 
     double CheckKondisiRuang(RuangKelas kls,String IDKelas) {
-//        inop.InputKondisiRuang();
-//        kls = inop.getRuangKelas();
+
         String arasio,bentuk,apintu,ajendela;
-        System.out.println("==============Analisis==================");
         Luas = kls.getPanjangRuang() * kls.getLebarRuang();
         if (kls.getLebarRuang() == kls.getPanjangRuang()) {
             
@@ -87,21 +85,12 @@ public class Sistem extends Proses{
         }
         con.analisisSave(persentaseKondisiRuang(s),IDKelas, Luas, bentuk, RasioLuas,arasio, apintu, ajendela);
         
-//        if (ts > s) {
-//            kondisi = 0; 
-//        } else {
-//            kondisi = 1;
-//        }
-        
         return s;
     } 
    @Override
    double persentaseKondisiRuang(int s){
         double total = s*25;
-//        System.out.println("persentase KOndisi Ruang : "+total+"%");
-//        System.out.println("======================================");
-//        System.out.println("::Anda Masuk CheckKondisiSarana::");
-        return total;
+     return total;
     }
 
     double CheckKondisiSarana(RuangKelas kls,String IDRuang) {
@@ -173,33 +162,23 @@ public class Sistem extends Proses{
             ts++;
         }
         con.analisisSave(persentaseKondisiSarana(s),IDRuang, ajstopkontak, akstopkontak, apstopkontak, ajlcd, aklcd, aplcd, ajlampu, aklampu, aplampu);
-       
-       //output(kls.getJumlahStopKontak(), kls.getKondisiStopKontak(), kls.getPosisiStopKontak(), kls.getJumlahKabelLCD(), kls.getKondisiKabelLCD(), kls.getPosisiKabelLCD(),kls.getJumlahLampu(), kls.getKondisiLampu(), kls.getPosisiLampu());
-//        if (ts > s) {
-//            kondisi = 0;
-//        } else {
-//            kondisi = 1;
-//        }
+      
         return s;
     }
     @Override
     double persentaseKondisiSarana(int s){
         double total = s*11;
-        System.out.println("persentase KOndisi Sarana : "+total+"%");
-        System.out.println("======================================");
-        System.out.println("::Anda Masuk CheckKondisiLingkungan::");
        return total;
     }
     double CheckKondisiSarana2(RuangKelas kls,String IDKelas) {
-//        inop.inputKondisiSarana();
-//        kls = inop.getRuangKelas();
+
         String ajkipasangin, akkipasangin, apkipasangin, ajac, akac, apac,assid,abandwidth, ajcctv, akcctv, apcctv;
          if(kls.getJumlahKipasAngin()>=2){
-            //System.out.println("JumlahKipasAngin : s");
+          
             ajkipasangin = "Sesuai";
              s++;
         } else {
-            //System.out.println("Tidak s");
+            
             ajkipasangin = "Tidak Sesuai";
              ts++;
         }
@@ -301,17 +280,11 @@ public class Sistem extends Proses{
     @Override
     double persentaseKondisiSarana2(int s){
         double total = s*9;
-        System.out.println("persentase KOndisi Sarana : "+total+"%");
-        System.out.println("======================================");
-        System.out.println("::Anda Masuk CheckKondisiLingkungan::");
+ 
        return total;
     }
     int CheckKondisiLingkungan(RuangKelas kls,String IDKelas) {
-//        inop.inputKondisiLingkungan();
-//        kls = inop.getRuangKelas();
-//        int kon;
-//        System.out.println("==============Analisis==================");
-        String asirkulasiudara,acahaya="",alembab="",asuhu="";
+    String asirkulasiudara,acahaya="",alembab="",asuhu="";
         if ("Lancar".equalsIgnoreCase(kls.getSirkulasiUdara())) {
             //System.out.println("Sirkulasi Udara : Sesuai");
             asirkulasiudara = "Sesuai";
@@ -416,9 +389,7 @@ public class Sistem extends Proses{
     @Override
     double persentaseKondisiKebersihan(int s){
     double total = s*25;
-    System.out.println("persentase Kondisi Kebersihan : "+total+"%");
-    System.out.println("======================================");
-    System.out.println("::Anda Masuk CheckKondisiKenyamanan::");
+
     return total;
     }
   
@@ -471,13 +442,7 @@ public class Sistem extends Proses{
             aaus = "Tidak Sesuai";
             ts++;
         }
-//        if (s == 1) {
-//            System.out.println("s");
-//            kon = 1;
-//        } else {
-//            System.out.println("Tidak s");
-//            kon = 0;
-//        }
+
         con.analisisSave(persentaseKenyamanan(s),IDKelas, abising, abau, abocor, arusak, aaus, 0);
         
         return s;
@@ -485,16 +450,12 @@ public class Sistem extends Proses{
     @Override
     double persentaseKenyamanan(int s){
      double total = s*25;
-    System.out.println("persentase Kondisi Kenyamanan : "+total+"%");
-    System.out.println("======================================");
-    System.out.println("::Anda Masuk CheckKondisiKeamanan::");
+
     return total;
     }
 
     int CheckKondisiKeamanan(RuangKelas kls,String IDRuang) {
-//        int kon;
-//        inop.inputKondisiLingkungan();
-//        kls = inop.getRuangKelas();
+
         String akekokohan,akuncipintujendela,abahaya;
         System.out.println("==============Analisis==================");
         if ("Kokoh".equalsIgnoreCase(kls.getKekokohan())) {
@@ -525,8 +486,7 @@ public class Sistem extends Proses{
     @Override
     double persentaseKeamanan(int s){
     double total = s*100/3;
-    System.out.println("persentase Kondisi Kenyamanan : "+total+"%");
-    System.out.println("======================================"); 
+
     return total;
     }
     
